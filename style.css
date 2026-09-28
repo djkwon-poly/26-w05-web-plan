@@ -47,13 +47,15 @@ a:focus-visible, button:focus-visible { outline: 3px solid #8ebc36; outline-offs
 .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 63px; color: #778078; }
 .note-rule { width: 30px; height: 1px; background: #93a08f; }
 .hero-visual { position: relative; height: 475px; min-width: 0; overflow: hidden; background: #1e3838; animation: rise-in .8s .1s both; }
-.hero-visual img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; filter: saturate(.72); }
+.hero-visual .hero-background { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; filter: saturate(.72); }
+.hero-visual .hero-guard { position: absolute; z-index: 2; right: 5%; bottom: 0; width: 58%; height: 94%; display: block; object-fit: contain; object-position: center bottom; filter: drop-shadow(0 12px 22px rgba(0, 0, 0, .32)); }
 .visual-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 20, 19, .15), transparent 40%, rgba(10, 20, 19, .56)); }
 .visual-label { position: absolute; top: 22px; left: 22px; display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: rgba(16, 24, 21, .76); color: #eaf1df; }
 .visual-label .status-dot { width: 6px; height: 6px; }
 .visual-label strong { color: var(--green); font-weight: 500; }
 .visual-index { position: absolute; top: 23px; right: 22px; color: rgba(255, 255, 255, .77); }
 .visual-caption { position: absolute; right: 22px; bottom: 21px; left: 22px; display: flex; justify-content: space-between; color: rgba(255, 255, 255, .8); }
+.visual-label, .visual-index, .visual-caption { z-index: 3; }
 .scroll-cue { position: absolute; bottom: 28px; left: 0; display: flex; align-items: center; gap: 12px; color: #778078; }
 .scroll-cue span { width: 1px; height: 24px; background: #96a18f; }
 
@@ -123,6 +125,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #8ebc36; outline-offs
   .hero h1 { font-size: clamp(43px, 9vw, 64px); }
   .hero-note { margin-top: 37px; }
   .hero-visual { height: min(62vw, 410px); }
+  .hero-visual .hero-guard { right: 0; width: 66%; height: 91%; }
   .scroll-cue { bottom: 22px; }
   .services { padding-block: 80px 90px; }
   .section-heading { align-items: start; flex-direction: column; gap: 17px; margin-bottom: 30px; }
@@ -146,6 +149,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #8ebc36; outline-offs
   .hero h1 { font-size: 42px; }
   .hero-description { font-size: 13px; }
   .hero-visual { height: 290px; }
+  .hero-visual .hero-guard { right: -2%; width: 72%; height: 89%; }
   .visual-label { top: 14px; left: 14px; padding: 10px; font-size: 8px; }
   .visual-index { top: 17px; right: 14px; }
   .visual-caption { right: 14px; bottom: 14px; left: 14px; font-size: 8px; }
